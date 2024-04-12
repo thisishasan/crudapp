@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: crudapp-pod
+  labels:
+    name: crudapp-pod
+    app: demo-crudapp
+spec:
+  containers:
+    - name: crudapp
+      image: hasan007/crudapp
+      ports:
+        - containerPort: 80
+      env:
+        - name: DB_HOST
+          value: "db"
+        - name: DB_NAME
+          value: "dbcrudapp"
+        - name: DB_USER
+          value: "user"
+        - name: DB_PASS
+          value: "root"

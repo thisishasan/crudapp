@@ -1,0 +1,14 @@
+resources:
+  - resources/pv-mysql.yaml
+  - resources/pvc-mysql.yaml
+  - resources/deployment-mysql.yaml
+  - resources/service-mysql.yaml
+  - resources/deployment-crudapp.yaml
+  - resources/service-crudapp.yaml
+secretGenerator:
+  - name: mysql-dbpass
+    literals:
+      - dbpass=root
+  - name: mysql-dbrootpass
+    literals:
+      - dbrootpass=password

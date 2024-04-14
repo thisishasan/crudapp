@@ -1,6 +1,6 @@
 services:
   crudapp:
-    image: crudapp
+    image: hasan007/crudapp:latest
     ports:
       - 8080:80
       - 8081:80

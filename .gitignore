@@ -1,3 +1,4 @@
 /data/db/
 logs.txt
 .idea
+.env

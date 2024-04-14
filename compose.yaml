@@ -10,17 +10,17 @@ services:
     networks:
       - default
     environment:
-      DB_HOST: "db"
-      DB_NAME: "dbcrudapp"
-      DB_USER: "user"
-      DB_PASS: "root"
+      DB_HOST: "${DB_HOST}"
+      DB_NAME: "${DB_NAME}"
+      DB_USER: "${DB_USER}"
+      DB_PASS: "${DB_PASS}"
   db:
     image: mysql:8.0
     environment:
-      MYSQL_DATABASE: "dbcrudapp"
-      MYSQL_USER: "user"
-      MYSQL_PASSWORD: "root"
-      MYSQL_ROOT_PASSWORD: "password"
+      MYSQL_DATABASE: "${DB_NAME}"
+      MYSQL_USER: "${DB_USER}"
+      MYSQL_PASSWORD: "${DB_PASS}"
+      MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASS}"
     volumes:
       - ./data/db:/var/lib/mysql
     networks:
